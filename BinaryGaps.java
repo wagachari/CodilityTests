@@ -8,7 +8,8 @@ class BinaryGaps {
     }
     /*
      * Check: Description from Codility in readme:
-     *   findMaxBinaryGap caculates the binary gap and accepts binary number of type String as an argument       
+     * findMaxBinaryGap caculates the maximum binary gap.
+     * The method accepts binary number of type String as an argument       
      */
     private int findMaxBinaryGap(String binaryString){
        ArrayList<Integer> binaryGaps = new ArrayList<>();
@@ -23,7 +24,7 @@ class BinaryGaps {
             } else {
                 //if we are here, means we found a one bit, but we need further checks to confirm if we are still in current gap check mode (there was a zero before this iteration).
                 if (currentGap > 0) {
-                    //yaay! we found a bin gap!!
+                    //yaay! we found a binaray gap!!
                     binaryGaps.add(currentGap);
                     //lets use Math.max to check if it is bigger than the previous.
                     maxGap = Math.max(maxGap, currentGap);
