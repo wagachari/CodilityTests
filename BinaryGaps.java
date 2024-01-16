@@ -32,7 +32,7 @@ class BinaryGaps {
                 }
             }
         }
-        //end of loop, returing maximum binary gap
+        //end of loop, returning maximum binary gap
         return maxGap;
     }
         
