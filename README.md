@@ -1,3 +1,7 @@
+ # To execute any of the classes, clone the repo to your PC, change directory to location of the class you want to execute.
+    - Run below command where Example.java is the name of the class you want to run
+    javac Example.java
+
 # CodilityTests
  ## Binary Gap:
 - Description from Codility
@@ -30,3 +34,5 @@
     - 2. Going with the iterable operations, Strings are not iterable by design but using .length method the characters in a string becomes a sequence which can be iterated; we will work with a String.
     - 3. We will need to maitain the position of each 1 bit, we will use an ArrayList for this (this is just by preference from the wide range of data structures available to us).
     - 4. Lastly, we will apply logic to check for position of 1 bits, sum of zeros between the 1 bits and finally the maximum of such an occurence.
+
+   
