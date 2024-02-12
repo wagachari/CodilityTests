@@ -1,8 +1,5 @@
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Set;
+import java.util.HashMap;
+import java.util.Map;
 
 public class DistinctArrayValues {
 
@@ -13,23 +10,21 @@ public class DistinctArrayValues {
 
     }
     private int solution(int []arrayOfValues){
-        int numberOfNonUnique = 0;
-        Set<Integer> setOfNumbers = new HashSet<>();
-        Queue<Integer> uniqueSetOfNumbers = new LinkedList<>();
+       int uniqueCount = 0;
+       Map<Integer, Integer> countMap = new HashMap<>();
 
-        for(int a:arrayOfValues){
-            setOfNumbers.add(a);
+        // Count the occurrences of each number
+        for (int num : arrayOfValues) {
+            countMap.put(num, countMap.getOrDefault(num, 0) + 1);
         }
-        for(int i=0; i < arrayOfValues.length;i ++) {
-            System.out.println("i is "+arrayOfValues[i]);
-            if(!uniqueSetOfNumbers.contains(arrayOfValues[i])){
-                uniqueSetOfNumbers.add(arrayOfValues[i]);
-            }else{
-                numberOfNonUnique +=1;
-            }            
+
+        // Count the numbers that occur only once
+        for (int num : countMap.keySet()) {
+            if (countMap.get(num) == 1) {
+                uniqueCount++;
+            }
         }
-        int uniqueValues = setOfNumbers.size() - numberOfNonUnique;
-        return uniqueValues;
+        return uniqueCount;
 
     }
     
